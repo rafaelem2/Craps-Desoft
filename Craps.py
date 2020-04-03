@@ -1,3 +1,4 @@
+# EP1 - Design de Software aluno Rafael Monteiro Turma A
 import random
 import time  #importando as bibliotecas usadas
 jogo=True #O jogo pode continuar ou ser parado (True or False)
