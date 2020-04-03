@@ -1,11 +1,11 @@
 import random
 import time  #importando as bibliotecas usadas
-jogo=True
+jogo=True #O jogo pode continuar ou ser parado (True or False)
 resposta=input("Você quer jogar Craps? s/n ")
 while jogo==True: #Introduzindo o jogo e aplicando um loop
     if resposta == "s":
         print('Você está na fase Come Out') 
-        time.sleep(1)
+        time.sleep(1) #Time sleep afim de gerar dinâmica ao jogo
         fichas = int(input('Quantas fichas você tem?: '))
         print('Você tem {0} fichas'.format(fichas))
         time.sleep(1)
@@ -42,33 +42,26 @@ while jogo==True: #Introduzindo o jogo e aplicando um loop
                     print("Hora de jogar na fase point") #Fase point
                     time.sleep(1)
                     point = dado
-                    print('Você está jogando na fase point')
+                    print('Você está jogando na Fase Point')
                     time.sleep(1)
-                    print('Você tem {0} fichas'.format(fichas))
-                    time.sleep(1)
-                    print('O Point para você ganhar é o número {0}'.format(point))
+                    print('O point para você ganhar é o número {0}'.format(point))
                     input("Pressione Enter para jogar")
                     dado2 = random.randint(1, 6) + random.randint(1, 6)
                     while dado2 != point and dado2 != 7:#loop até o jogador ganhar ou perder
-                        time.sleep(1)
                         print('Você tirou {0}, continue jogando'.format(dado2))
                         input("Pressione Enter para jogar")
                         dado2 = random.randint(1, 6) + random.randint(1, 6)
-                        if dado2 == point:
-                            time.sleep(1)
-                            print('Você acertou o Point e ganhou {0} fichas!'.format(aposta))
+                        if dado2 == point:                      
+                            print('Você acertou o point e ganhou {0} fichas!'.format(aposta))
                             time.sleep(1)
                             fichas += aposta*2
                             print('Você tem {0} fichas '.format(fichas))
                         if dado2 == 7:
-                            time.sleep(1)
                             print('O resultado foi 7 e você perdeu {0} fichas'.format(aposta))
                             time.sleep(1)
                             fichas-=aposta
                             print('Você tem {0} fichas '.format(fichas))
-                            # Fichas acabaram
                             if fichas==0:
-                                time.sleep(1)
                                 print('Você não tem mais fichas:(') 
                                 jogo=False       
 
@@ -76,7 +69,6 @@ while jogo==True: #Introduzindo o jogo e aplicando um loop
             elif tipo_de_aposta== "Field": #Aposta Field
                 input("Pressione Enter para jogar")
                 dado = random.randint(1, 6) + random.randint(1, 6)
-                time.sleep(1)
                 print("o resultado foi {}" .format(dado))
                 if dado == 5 or dado == 6 or dado == 7 or dado == 8:
                     time.sleep(1)
@@ -103,13 +95,11 @@ while jogo==True: #Introduzindo o jogo e aplicando um loop
                     time.sleep(1)
                     print('Você tem {0} fichas'.format(fichas))
                 if fichas == 0:
-                    time.sleep(1)
                     print('Você não tem mais fichas:(')
                     jogo=False
             elif tipo_de_aposta== "Any Craps": #Aposta Any Craps
                 input("Pressione Enter para jogar")
                 dado = random.randint(1, 6) + random.randint(1, 6)
-                time.sleep(1)
                 print("o resultado foi {}" .format(dado))
                 if dado == 2 or dado == 3 or dado == 12:
                     time.sleep(1)
@@ -124,13 +114,11 @@ while jogo==True: #Introduzindo o jogo e aplicando um loop
                     time.sleep(1)
                     print('Suas fichas: {0}'.format(fichas))
                 if fichas == 0:
-                    time.sleep(1)
                     print('Você não tem mais fichas:(')
                     jogo=False
             elif tipo_de_aposta == "Twelve": #Aposta Twelve
                 input("Pressione Enter para jogar")
                 dado = random.randint(1, 6) + random.randint(1, 6)
-                time.sleep(1)
                 print("o resultado foi {}" .format(dado))
                 
                 if dado == 12:
